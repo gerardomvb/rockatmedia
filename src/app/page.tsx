@@ -6,103 +6,113 @@ import Link from "next/link";
 export default function Home() {
   const campaigns = [
     {
-      id: "guitarra-slash",
-      title: "Guitarra Gibson Les Paul Firmada por Slash",
-      description: "Apoya talleres de música para jóvenes y gana esta pieza coleccionable autografiada en gira 2025.",
-      image: "https://images.unsplash.com/photo-1541753080841-9d3a88a83c30?auto=format&fit=crop&w=600&q=80",
-      goal: 15000,
-      raised: 9870,
-      endDate: "31 dic",
-      tags: ["rock", "guitarra", "coleccionable"],
-      color: "from-red-900/20 to-transparent",
+      id: "ps5-bundle",
+      title: "Gana una PS5 + Juegos del Año",
+      description: "Apoya jóvenes creadores de contenido en comunidades marginadas.",
+      image: "https://images.unsplash.com/photo-1589003077981-0c98a24c4d4f?auto=format&fit=crop&w=600&q=80",
+      goal: 10000,
+      raised: 7230,
+      daysLeft: 14,
+      tags: ["gaming", "ps5", "coleccionable"],
     },
     {
-      id: "vinilo-black-keys",
-      title: "Vinilo Edición Limitada + Meet & Greet",
-      description: "Ayuda a preservar estudios independientes de grabación en México.",
-      image: "https://images.unsplash.com/photo-1504893542924-8be9e7e32e5a?auto=format&fit=crop&w=600&q=80",
-      goal: 8000,
-      raised: 5420,
-      endDate: "30 nov",
-      tags: ["vinilo", "música", "edición limitada"],
-      color: "from-purple-900/20 to-transparent",
+      id: "anime-figures",
+      title: "Colección Completa de Figuras de Demon Slayer",
+      description: "Donaciones para talleres de animación en escuelas públicas.",
+      image: "https://images.unsplash.com/photo-1627308595181-7a2c9e7d4f3d?auto=format&fit=crop&w=600&q=80",
+      goal: 7500,
+      raised: 5120,
+      daysLeft: 8,
+      tags: ["anime", "demon slayer", "figuras"],
     },
     {
-      id: "backstage-foo-fighters",
-      title: "Pase Backstage + Guitarra Acústica de Foo Fighters",
-      description: "Fondos para becas de producción musical en escuelas públicas.",
+      id: "concert-vip",
+      title: "Pase VIP + Meet & Greet con Rammstein",
+      description: "Fondos para preservar espacios culturales independientes.",
       image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=600&q=80",
-      goal: 20000,
-      raised: 12500,
-      endDate: "15 ene",
-      tags: ["backstage", "rock", "experiencia"],
-      color: "from-yellow-900/20 to-transparent",
+      goal: 25000,
+      raised: 18750,
+      daysLeft: 21,
+      tags: ["rock", "rammstein", "vip"],
     },
   ];
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white">
-      {/* Hero Section - estilo Fandiem */}
+    <div className="min-h-screen bg-gray-900 text-white">
+      {/* Hero Section - estilo fandiem.com */}
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-black to-gray-950"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-24 md:py-32 text-center">
-          <h1 className="text-4xl md:text-6xl font-black tracking-tight mb-6">
-            Gana <span className="bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent">experiencias únicas</span>
+        {/* Imagen de fondo tipo fandiem */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1920&q=80')" }}
+        ></div>
+        <div className="absolute inset-0 bg-black/70"></div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-28 md:py-40 text-center">
+          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
+            Win Big. <span className="text-red-500">Support a Cause.</span>
           </h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto text-gray-300 mb-10">
-            Apoya causas en el mundo del entretenimiento y participa por artículos coleccionables, 
-            experiencias exclusivas y más.
+            Enter for a chance to win exclusive prizes while supporting amazing causes in entertainment and gaming.
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
             <Link
-              href="/campaigns"
-              className="px-8 py-4 bg-gradient-to-r from-yellow-500 to-red-500 text-gray-900 font-bold rounded-full text-lg hover:opacity-90 transition transform hover:scale-105 shadow-lg shadow-yellow-500/20"
+              href="/free-entry"
+              className="px-8 py-4 bg-white text-gray-900 font-bold rounded-full text-lg hover:bg-gray-200 transition transform hover:scale-105 shadow-lg"
             >
-              Explorar campañas
+              Enter Free
             </Link>
             <Link
-              href="/free-entry"
-              className="px-8 py-4 border-2 border-gray-700 hover:border-gray-500 text-white font-semibold rounded-full text-lg transition"
+              href="/campaigns"
+              className="px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-full text-lg transition transform hover:scale-105 shadow-lg"
             >
-              Participación gratuita
+              Donate & Get Entries
             </Link>
           </div>
 
           <p className="text-sm text-gray-500 max-w-2xl mx-auto">
-            No es necesario donar para participar. Cada donación te da entradas adicionales. 
-            Ver <Link href="/legal/rules" className="underline hover:text-yellow-400">reglas oficiales</Link>.
+            No purchase necessary. See official rules for free entry method.
           </p>
         </div>
       </div>
 
-      {/* How It Works */}
+      {/* How It Works - estilo fandiem */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16">
-        <h2 className="text-3xl font-bold text-center mb-12">¿Cómo funciona?</h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <h2 className="text-3xl font-bold text-center mb-12">How It Works</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            { step: "1", title: "Elige una campaña", desc: "Explora experiencias y premios únicos" },
-            { step: "2", title: "Donar", desc: "Apoya una causa que te apasiona" },
-            { step: "3", title: "Gana entradas", desc: "Cada $1 = 100 entradas para el sorteo" },
-            { step: "4", title: "¡Gana!", desc: "Participa y gana artículos coleccionables" },
+            { 
+              icon: "🎫", 
+              title: "Enter to Win", 
+              desc: "Choose a prize and enter for free or donate to get more entries." 
+            },
+            { 
+              icon: "❤️", 
+              title: "Support a Cause", 
+              desc: "100% of proceeds (after fees) go to the featured cause." 
+            },
+            { 
+              icon: "🏆", 
+              title: "Win Amazing Prizes", 
+              desc: "Win exclusive experiences, collectibles, and more!" 
+            },
           ].map((item, i) => (
-            <div key={i} className="text-center p-5 bg-gray-900/50 rounded-xl border border-gray-800">
-              <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4 font-black text-gray-900">
-                {item.step}
-              </div>
-              <h3 className="font-bold mb-2">{item.title}</h3>
-              <p className="text-gray-500 text-sm">{item.desc}</p>
+            <div key={i} className="text-center p-6 bg-gray-800/50 rounded-xl border border-gray-700">
+              <div className="text-4xl mb-4">{item.icon}</div>
+              <h3 className="font-bold text-xl mb-2">{item.title}</h3>
+              <p className="text-gray-400">{item.desc}</p>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Campaigns */}
+      {/* Campaigns - estilo fandiem */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16">
         <div className="flex justify-between items-center mb-10">
-          <h2 className="text-3xl font-bold">Campañas activas</h2>
-          <Link href="/campaigns" className="text-yellow-500 hover:underline text-sm">
-            Ver todas →
+          <h2 className="text-3xl font-bold">Active Campaigns</h2>
+          <Link href="/campaigns" className="text-red-500 hover:underline">
+            View All →
           </Link>
         </div>
 
@@ -111,46 +121,42 @@ export default function Home() {
             const progress = Math.min(100, Math.round((campaign.raised / campaign.goal) * 100));
             return (
               <Link key={campaign.id} href={`/campaigns/${campaign.id}`} className="block">
-                <div className="group bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 hover:border-yellow-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-yellow-500/10">
-                  <div className="relative h-56 overflow-hidden">
+                <div className="bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 hover:border-red-500/50 transition-all hover:shadow-2xl hover:shadow-red-500/10">
+                  <div className="h-56 overflow-hidden">
                     <img
                       src={campaign.image}
                       alt={campaign.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-full object-cover"
                     />
-                    <div className={`absolute inset-0 bg-gradient-to-t ${campaign.color}`}></div>
-                    <div className="absolute bottom-3 left-3">
-                      <span className="text-xs bg-black/60 text-white px-2 py-1 rounded">
-                        Finaliza {campaign.endDate}
-                      </span>
-                    </div>
                   </div>
                   <div className="p-5">
                     <div className="flex flex-wrap gap-1 mb-3">
                       {campaign.tags.map((tag, i) => (
                         <span
                           key={i}
-                          className="text-xs bg-gray-800 text-gray-300 px-2 py-1 rounded-full"
+                          className="text-xs bg-gray-700 text-gray-300 px-2 py-1 rounded-full"
                         >
                           {tag}
                         </span>
                       ))}
                     </div>
-                    <h3 className="font-bold text-lg mb-2 line-clamp-2 group-hover:text-yellow-400 transition">
-                      {campaign.title}
-                    </h3>
-                    <p className="text-gray-500 text-sm mb-4 line-clamp-2">
-                      {campaign.description}
-                    </p>
+                    <h3 className="font-bold text-lg mb-2 line-clamp-2">{campaign.title}</h3>
+                    <p className="text-gray-400 text-sm mb-4 line-clamp-2">{campaign.description}</p>
 
+                    {/* Countdown */}
+                    <div className="flex items-center text-red-500 text-sm font-bold mb-3">
+                      <span>Ends in {campaign.daysLeft} days</span>
+                    </div>
+
+                    {/* Progress bar */}
                     <div className="mb-3">
                       <div className="flex justify-between text-xs text-gray-400 mb-1">
                         <span>${campaign.raised.toLocaleString()}</span>
-                        <span>Meta: ${campaign.goal.toLocaleString()}</span>
+                        <span>Goal: ${campaign.goal.toLocaleString()}</span>
                       </div>
-                      <div className="h-2 bg-gray-800 rounded-full">
+                      <div className="h-2 bg-gray-700 rounded-full">
                         <div
-                          className="h-full bg-gradient-to-r from-yellow-500 to-red-500 rounded-full"
+                          className="h-full bg-red-500 rounded-full"
                           style={{ width: `${progress}%` }}
                         ></div>
                       </div>
@@ -164,17 +170,17 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <footer className="border-t border-gray-850 py-10">
+      <footer className="border-t border-gray-800 py-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center text-gray-500 text-sm">
-          <p>© {new Date().getFullYear()} RockatMedia. Hecho para fans, por fans.</p>
+          <p>© {new Date().getFullYear()} RockatMedia. All rights reserved.</p>
           <p className="mt-2">
-            RockatMedia no está afiliado con las bandas, marcas o artistas mostrados.
+            RockatMedia is not affiliated with the brands, artists, or companies featured.
           </p>
           <div className="mt-4 flex justify-center gap-6">
-            <Link href="/legal/terms" className="hover:text-white transition">Términos</Link>
-            <Link href="/legal/privacy" className="hover:text-white transition">Privacidad</Link>
-            <Link href="/legal/rules" className="hover:text-white transition">Reglas oficiales</Link>
-            <Link href="/contact" className="hover:text-white transition">Contacto</Link>
+            <Link href="/legal/terms" className="hover:text-white transition">Terms</Link>
+            <Link href="/legal/privacy" className="hover:text-white transition">Privacy</Link>
+            <Link href="/legal/rules" className="hover:text-white transition">Official Rules</Link>
+            <Link href="/contact" className="hover:text-white transition">Contact</Link>
           </div>
         </div>
       </footer>
